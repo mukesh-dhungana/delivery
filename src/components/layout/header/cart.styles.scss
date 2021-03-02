@@ -1,0 +1,276 @@
+@import '../../../sass/abstracts/variables';
+@import '../../../sass/abstracts/mixins';
+
+$cart-width:360px;
+$cart-maxHeight:90vh;
+
+@mixin iconBadge{
+    font-size:14px;
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    color: #{$color-primary};
+    line-height: 1;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(204, 204, 204);
+    border-image: initial;
+    flex: 0 0 30px;
+    border-radius: 50%;
+}
+
+
+.cart{
+    &-popup{
+        left: -120px;
+        width: $cart-width;
+
+        &::after{
+            left: 88%;
+            background-color: rgb(248, 248, 248);
+        }
+    }
+    &-block{
+        width: $cart-width;
+        display: flex;
+        flex-direction: column;
+        max-height: $cart-maxHeight;
+    }
+    &-list{
+        display: flex;
+        flex-direction: column;
+        &__item{
+            width: 100%;
+
+        }
+    }
+    &-header{
+        font-size: 15px;
+        font-weight: bold;
+        line-height: 22px;
+        color: rgb(51, 51, 51);
+        background-color: rgb(248, 248, 248);
+        text-align: left;
+        display: flex;
+        align-items: center;
+        padding: 7px 20px;
+
+        &__icon{
+            @include iconBadge;
+        }
+        &__name{
+            font-weight: 800;
+        }
+    }
+}
+
+.cart{
+    &-item{
+        &__container{
+            width: 100%;
+            padding: 10px 0 ;
+        }
+    }
+    &-items{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 10px 20px;
+
+        &:not(:last-child){
+            border-bottom: 1px solid #dfdfdf;
+        }
+        &__item{
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            line-height: 1.4;
+        }
+        &__name{
+            font-size: 14px;
+            font-weight: 500;
+            a{
+                color: #{$color-primary};
+                cursor: pointer;
+
+                &:hover{
+                    color: lighten($color-primary,15);
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        &__details{
+            font-size: 13px;
+            font-weight: normal;
+            color: #666;
+        }
+        &__no{
+            margin-right: 5px;
+        }
+        &__price{
+            margin-left: 5px;
+        }
+        &__link{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            width: 110px;
+            color:#{$color-primary};
+            cursor: pointer;
+
+            &:hover{
+                color: lighten($color-primary,15);
+            }
+            &-name{
+                font-weight: 700;
+                font-size: 14px;
+                
+            }
+
+            &-icon{
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+
+
+
+.cart{
+    &-view{
+        width: 100%;
+        // padding: 10px;
+
+        &__link{
+            padding: 10px 15px 0;
+            
+            a{
+                color: #{$color-primary};
+                cursor: pointer;
+                font-weight: 700;
+                font-size: 15px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                // justify-content: space-between;
+                span{
+                    margin-right: 5px;
+                }
+                &:hover{
+                    color: lighten($color-primary,15);
+                }
+            }
+        }
+        &__content{
+            
+        }
+        &__title{
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 22px;
+            color: #{$color-primary};
+            text-align: left;
+            display: flex;
+            align-items: center;
+            padding: 4px 15px;
+            border-bottom: 1px solid #efefef;
+            &-icon{
+                @include iconBadge;
+            }
+            &-name{
+                font-weight: normal;
+            }
+        }
+        &__list{
+            display: flex;
+            flex-direction:column ;
+            padding: 5px 15px 10px;
+        }
+        &__item{
+            width: 100%;
+        }
+        &__product{
+            display: flex;
+            flex-direction: row;
+            // align-items: center;
+            &-content{
+                flex-grow: 1;
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+            }
+            &-price{
+                width: 60px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                color:#666;
+                font-size: 14px;
+                line-height: 2;
+
+                .icon-delete{
+                    font-size: 16px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    &-product{
+        font-size: 14px;
+        line-height: 1.5;
+        &__items{
+            color: #{$color-primary};
+            margin: 0 10px;
+            margin-right: 20px;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+        &__content{
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.4;
+        }
+        &__name{
+            color: #{$color-primary};
+            cursor: pointer;
+            font-weight: 600;
+
+        }
+        &__subname{
+            font-size: 14px;
+            font-weight: 400;
+        }
+    }
+    &-total{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        &__item{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 14px;
+            font-weight: 400;
+            color: #333;
+            margin-bottom: 5px;
+            line-height: 1.7;
+
+            &.bold{
+                font-weight: 800;
+            }
+        }
+    }
+    &-btn{
+        margin-bottom: 10px;
+        padding: 10px 20px;
+    }
+}

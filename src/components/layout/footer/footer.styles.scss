@@ -1,0 +1,84 @@
+@import '../../../sass/abstracts/variables';
+@import '../../../sass/abstracts/mixins';
+
+.footer{
+    background: #f8f8f8;
+    z-index: 1;
+    position: static;
+    padding: 20px 20px 130px;
+    @media (min-width: 960px){
+        padding: 20px;
+    }
+    &-links{
+
+    }
+    &-nav{
+        display: none;
+        @media (min-width: 960px){
+            display: block;
+        }
+        &__links{
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+        &__link{
+            color: #{$color-primary-dark};
+            cursor: pointer;
+            text-decoration: none;
+            @media (min-width: 960px){
+                text-align: left;
+                color: #999;
+                padding-right: 60px;
+
+                &:hover{
+                    color:#{$color-primary}
+                }
+            }
+
+        }
+        &__socials{
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &-links{
+                color: #999;
+                padding-right: 60px;
+                &:hover{
+                    color:#{$color-primary}
+                }
+                &.android-store{
+                    display: inline-block;
+                    text-decoration: none;
+                    font-size: 0;
+                    width: 79px;
+                    height: 28px;
+                    background-image: url('../../../assets/img/icon/googlestore.png');
+                    &:hover{
+                        background-image: url('../../../assets/img/icon/googlehover.png');
+                    }
+
+                }
+                &.apple-store{
+                    display: inline-block;
+                    text-decoration: none;
+                    font-size: 0;
+                    margin-right: 60px;
+                    width: 92px;
+                    height: 28px;
+                    background-image: url('../../../assets/img/icon/appleapp.png');
+                    &:hover{
+                        background-image: url('../../../assets/img/icon/applehover.png');
+                    }
+                }
+
+            }
+            &-icons{
+
+            }
+        }
+    }
+}

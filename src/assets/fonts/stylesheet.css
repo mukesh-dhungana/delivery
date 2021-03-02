@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'dcom-ico-font';
+    src: url('dcom-ico-font.woff2') format('woff2'),
+        url('dcom-ico-font.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+

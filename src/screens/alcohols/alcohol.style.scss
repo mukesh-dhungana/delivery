@@ -1,0 +1,199 @@
+@import '../../sass/abstracts/variables';
+@import '../../sass/abstracts/mixins';
+
+.alcohol{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &-block{
+        width: 100%;
+        padding: 0 20px;
+        &:nth-child(2){
+            .alcohol-block__list{
+                grid-template-areas: "a b b"
+                "c d e";
+            }
+        }
+        &:nth-child(3){
+            .alcohol-block__list{
+                grid-template-areas: "a b c"
+                "d e e";
+            }
+        }
+        &__title{
+            margin-bottom: 5px;
+            h3{
+                @include heading3;
+                font-weight: bold;
+                font-size: 18px;
+            }
+        }
+        &__container{
+            width: 100%;
+            margin-bottom: 30px;
+            
+        }
+        &__list{
+            width: 100%;
+            list-style: none;
+            display: grid;
+            // grid-template-columns:66% 33% 33% 33% 33%;
+            grid-template-rows: 140px 140px;
+            grid-gap: 10px;
+            grid-template-areas: "a a b"
+                                "c d e";
+                                
+        }
+        &__item{
+            grid-area: c;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            &-title{
+                z-index: 11;
+                h5{
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: #fff;
+                }
+            }
+            &-img{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0; 
+                z-index: -2;
+                @include overlayBefore(rgba(40,40,40,0.45));
+                background-position: center;
+                background-size: cover;
+                z-index: 1;
+                transform-origin: 50%;
+                transition: all 800ms;
+                &:hover{
+                    transform: scale(1.05);
+                } 
+                &:before{
+                    z-index: -1;
+                }
+            }
+            a{
+                display: block;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                position: relative;
+                cursor: pointer;
+               
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+        }
+    }
+}
+
+.wine-img{
+    li{
+        .alcohol-block__item-img{
+            background-image: url('../../assets/img/alcohol/wine2.jpg');
+        }
+        &:nth-child(2){
+            .alcohol-block__item-img{
+                background-image: url('../../assets/img/alcohol/wine1.jpg');
+            }
+        }
+        &:nth-child(3){
+            .alcohol-block__item-img{
+                background-image: url('../../assets/img/alcohol/wine1.jpg');
+            }
+        }
+        &:nth-child(4){
+            .alcohol-block__item-img{
+                background-image: url('../../assets/img/alcohol/wine2.jpg');
+            }
+        }
+        &:nth-child(5){
+            .alcohol-block__item-img{
+                background-image: url('../../assets/img/alcohol/wine3.jpg');
+            }
+        }
+    }
+}
+
+.liquore-img{
+    li{
+        .alcohol-block__item-img{
+            background-image: url('../../assets/img/alcohol/liq2.jpg');
+        }
+        &:nth-child(2){
+            .alcohol-block__item-img{
+                background-image: url('../../assets/img/alcohol/liq1.jpg');
+            }
+        }
+        &:nth-child(3){
+            .alcohol-block__item-img{
+                background-image: url('../../assets/img/alcohol/liq3.jpg');
+            }
+        }
+        &:nth-child(4){
+            .alcohol-block__item-img{
+                background-image: url('../../assets/img/alcohol/liq2.jpg');
+            }
+        }
+        &:nth-child(5){
+            .alcohol-block__item-img{
+                background-image: url('../../assets/img/alcohol/liq4.jpg');
+            }
+        }
+    }
+}
+
+.beer-img{
+    li{
+        .alcohol-block__item-img{
+            background-image: url('../../assets/img/alcohol/beer1.jpg');
+        }
+        &:nth-child(2){
+            .alcohol-block__item-img{
+                background-image: url('../../assets/img/alcohol/beer2.jpg');
+            }
+        }
+        &:nth-child(3){
+            .alcohol-block__item-img{
+                background-image: url('../../assets/img/alcohol/beer3.jpg');
+            }
+        }
+        &:nth-child(4){
+            .alcohol-block__item-img{
+                background-image: url('../../assets/img/alcohol/beer2.jpg');
+            }
+        }
+        &:nth-child(5){
+            .alcohol-block__item-img{
+                background-image: url('../../assets/img/alcohol/beer4.jpg');
+            }
+        }
+    }
+}
+
+
+.alcohol-block__item{
+    &:first-child{
+        grid-area: a;
+    }
+    &:nth-child(2){
+        grid-area: b;
+    }
+    &:nth-child(3){
+        grid-area: c;
+    }
+    &:nth-child(4){
+        grid-area:d;
+    }
+    &:nth-child(5){
+        grid-area: e;
+    }
+}

@@ -1,0 +1,107 @@
+@import '../../sass/abstracts/variables';
+@import '../../sass/abstracts/mixins';
+
+.alcohol{
+    &-container{
+        width: 100%;
+    }
+    &-title{
+        padding: 10px 0;
+        h3{
+            font-size: 22px;
+            font-weight: lighter;
+            color: #333;
+        }
+    }
+    &-items{
+        display: flex;
+        flex-direction: column;
+    }
+    &-item{
+        display: flex;
+        flex-direction: column;
+        margin: 5px 0 15px;
+        &__title{
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            h3{
+                font-size: 20px;
+                font-weight: 700;
+                color:#444;
+            }
+        }
+        &__view{
+            a{
+                color:#{$color-primary};
+                font-size: 14px;
+                cursor: pointer;
+
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+        &__list{
+            // display: flex;
+            // flex-direction: row;
+            width: 100%;
+            // overflow: hidden;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;;
+
+            // .slick-slide{
+            //     width: 160px !important;
+            // }
+            .slick-track{
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+        }
+    }
+    &-product{
+        text-align: center;
+        max-width: 200px;
+        cursor: pointer;
+        flex: 0 0 120px;
+        width: 120px;
+        padding: 0 10px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        @media (min-width: 768px){
+            flex: 0 0 160px;
+            width: 160px;
+            padding: 0 20px;
+        }
+        &__img{
+            height: 160px;
+            width: 160px;
+            display: block;
+            margin-left: -80px;
+            position: relative;
+            left: 50%;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        &__name{
+            margin-top: 10px;
+            flex: 1 1 auto;
+            color: #1f5ea9;
+            font-size: 14px;
+            cursor: pointer;
+            line-height: 1.3;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+        &__price{
+            font-size: 14px;
+            color: #666;
+        }
+    }
+}

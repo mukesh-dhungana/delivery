@@ -1,0 +1,40 @@
+.sidebar {
+    flex: 0 0 250px;
+    max-width: 250px;
+    min-width: 250px;
+    width: 250px;
+    // -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 3px 10px 30px 3px rgba(0, 0, 0, 0.19);
+    // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 3px 10px 30px 3px rgba(0, 0, 0, 0.19);
+    transition: all 0.3s;
+    position: relative;
+    // background:#005897;
+    background: #f8f8f8;
+    padding: 0.6rem 0rem;
+    box-sizing: border-box;
+    @media (max-width: 768px){
+        display: none;
+    }
+
+
+    @media (min-width: 960px){
+        padding: 40px 20px 40px 40px;
+    }
+
+    &-title{
+        margin-bottom: 10px;
+        display: flex;
+        align-items: flex-end;
+        flex-direction: row;
+        &.bold{
+            margin-bottom: 5px;
+            h3{
+                font-weight: bold;
+                font-size: 15px;
+                margin-right: 4px;
+            }
+        }
+        h3{
+            @include heading3;
+        }
+    }
+}

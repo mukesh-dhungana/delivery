@@ -1,0 +1,77 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    // This defines what 1rem is
+    font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+
+    @include respond(tab-land) { // width < 1200?
+        font-size: 56.25%; //1 rem = 9px, 9/16 = 50%
+    }
+
+    @include respond(tab-port) { // width < 900?
+        font-size: 50%; //1 rem = 8px, 8/16 = 50%
+    }
+    
+    @include respond(big-desktop) {
+        font-size: 75%; //1rem = 12, 12/16
+    }
+}
+
+body {
+    box-sizing: border-box;
+    // padding: 3rem;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    
+
+    @include respond(tab-port) {
+        padding: 0;
+    }
+}
+
+html,body,button,input{
+    font-family: $font-stack;
+}
+
+// @import '../../assets/fonts/stylesheet.css';
+
+// @font-face {
+//     font-family: "myfont";
+//     src: url("./../../assets/fonts/") format('woff');
+// }
+a{
+    text-decoration: none;
+    color: #{$color-primary};
+
+    &:hover{
+        color: #{$color-primary-dark};
+    }
+}
+
+ul,li{
+    list-style: none;
+}
+
+h1,h2,h3,h4,h5{
+    color: #333;
+}
+
+::selection {
+    background-color: $color-primary;
+    color: $color-white;
+}
+
+input{
+    @include placeholder{
+        @include placeholderText;
+    }
+}
+
+
